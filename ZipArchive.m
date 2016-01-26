@@ -124,7 +124,7 @@
         fileDate = [NSDate date];
 
     
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents* components = [gregorianCalendar components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay |
                                     NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond fromDate:fileDate];
     [gregorianCalendar release];
@@ -317,7 +317,7 @@
 			dc.year = fileInfo.tmu_date.tm_year;
 			
 			NSCalendar *gregorian = [[NSCalendar alloc]
-									 initWithCalendarIdentifier:NSGregorianCalendar];
+									 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 			
 			orgDate = [gregorian dateFromComponents:dc] ;
 			[dc release];
@@ -399,7 +399,7 @@
 					components.month = fileInfo.tmu_date.tm_mon+1;
 					components.year = fileInfo.tmu_date.tm_year;
 					
-					NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+					NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 					NSDate* orgDate = [[gregorianCalendar dateFromComponents:components] retain];
 					[components release];
 					[gregorianCalendar release];
@@ -561,7 +561,7 @@
 	[comps setMonth:1];
 	[comps setYear:1980];
 	NSCalendar *gregorian = [[NSCalendar alloc]
-							 initWithCalendarIdentifier:NSGregorianCalendar];
+							 initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
 	NSDate *date = [gregorian dateFromComponents:comps];
 	
 	[comps release];
